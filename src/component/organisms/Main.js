@@ -1,36 +1,25 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+
+import FormMemory from '../molecules/FormMemory';
+import ListMemory from '../molecules/ListMemory'
+import ActionMemory from '../molecules/ActionMemory'
 
 function Main() {
-    const [age, setAge] = React.useState('');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
-  };
-
     return (
-      <>
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-standard-label">Memory</InputLabel>
-        <Select
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={age}
-          onChange={handleChange}
-          label="Memory"
-        >
-          <MenuItem value="">
-            <em>none</em>
-          </MenuItem>
-          <MenuItem value={"AH"}>AH</MenuItem>
-          <MenuItem value={"AL"}>AL</MenuItem>
-        </Select>
-        </FormControl>
-      </>
+      <Container maxWidth="lg">
+        <Grid container>
+          <Grid item xs={12} md={6}>
+            <ListMemory/>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <FormMemory/>
+            <ActionMemory/>
+          </Grid>
+        </Grid>
+      </Container>
     );
   }
   
