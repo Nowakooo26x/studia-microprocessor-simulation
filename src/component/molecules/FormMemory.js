@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useSnackbar } from 'notistack';
-
 import { useSelector, useDispatch } from 'react-redux'
+
 import { setValueMemory } from '../../app-redux/features/memorySlice'
 
+import validateBin from '../../utils/validateBin'
+import randomBin from '../../utils/randomBin'
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -14,8 +16,7 @@ import Typography from '@mui/material/Typography';
 
 import SelectMemory from '../atoms/SelectMemory'
 
-import validateBin from '../../utils/validateBin'
-import randomBin from '../../utils/randomBin'
+
 
 function FormMemory() {
 

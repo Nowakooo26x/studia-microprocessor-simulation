@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux'
 
 import { setValueMemory } from '../../app-redux/features/memorySlice'
+
 import randomBin from '../../utils/randomBin'
 
 import Grid from '@mui/material/Grid';
@@ -11,22 +12,10 @@ import Typography from '@mui/material/Typography';
 
 import ItemMemory from '../atoms/ItemMemory'
 
-import { useSelector, useDispatch } from 'react-redux'
-
 function ListMemory() {
 
-    const memoryAL = useSelector((state) => state.memory.AL)
-    const memoryBL = useSelector((state) => state.memory.BL)
-    const memoryCL = useSelector((state) => state.memory.CL)
-    const memoryDL = useSelector((state) => state.memory.DL)
-
-    const memoryAH = useSelector((state) => state.memory.AH)
-    const memoryBH = useSelector((state) => state.memory.BH)
-    const memoryCH = useSelector((state) => state.memory.CH)
-    const memoryDH = useSelector((state) => state.memory.DH)
-
     const dispatch = useDispatch();
-
+    
     const handleClick = () => {
         dispatch(setValueMemory({ title: "AL", value: randomBin() }))
         dispatch(setValueMemory({ title: "BL", value: randomBin() }))
@@ -51,16 +40,16 @@ function ListMemory() {
             alignItems="center"
         >
             <Box>
-                <ItemMemory title={"AL"} value={memoryAL}/>
-                <ItemMemory title={"BL"} value={memoryBL}/>
-                <ItemMemory title={"CL"} value={memoryCL}/>
-                <ItemMemory title={"DL"} value={memoryDL}/>
+                <ItemMemory title={"AL"}/>
+                <ItemMemory title={"BL"}/>
+                <ItemMemory title={"CL"}/>
+                <ItemMemory title={"DL"}/>
             </Box>
             <Box>
-                <ItemMemory title={"AH"} value={memoryAH}/>
-                <ItemMemory title={"BH"} value={memoryBH}/>
-                <ItemMemory title={"CH"} value={memoryCH}/>
-                <ItemMemory title={"DH"} value={memoryDH}/>
+                <ItemMemory title={"AH"}/>
+                <ItemMemory title={"BH"}/>
+                <ItemMemory title={"CH"}/>
+                <ItemMemory title={"DH"}/>
             </Box>
         </Grid>
         <Button variant="contained" onClick={handleClick}>RANDOM ALL</Button>
