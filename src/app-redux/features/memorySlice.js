@@ -3,6 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 import changeShortBinToBin from '../../utils/changeShortBinToBin'
 import notOperation from '../../utils/notOperation'
 
+import addUtils from '../../utils/addUtils'
+import subUtils from '../../utils/subUtils'
+
         //parseInt("1101011", 2);
         //Number(decimal).toString(2)
 
@@ -46,12 +49,12 @@ export const memorySlice = createSlice({
         state[state.memoryInput.input1] = memory
       },
       addAction: ( state ) => {
-        let decimal = (parseInt(state[state.memoryInput.input1], 2) + parseInt(state[state.memoryInput.input2], 2));
-        state[state.memoryInput.input1] =  changeShortBinToBin(Number(decimal).toString(2))
+        const m1 = state[state.memoryInput.input1], m2 = state[state.memoryInput.input2];
+        state[state.memoryInput.input1] =  changeShortBinToBin(addUtils(m1, m2))
       },
       subAction: ( state ) => {
-        let decimal = (parseInt(state[state.memoryInput.input1], 2) - parseInt(state[state.memoryInput.input2], 2));
-        state[state.memoryInput.input1] =  changeShortBinToBin(Number(decimal).toString(2))
+        const m1 = state[state.memoryInput.input1], m2 = state[state.memoryInput.input2];
+        state[state.memoryInput.input1] =  changeShortBinToBin(subUtils(m1, m2))
       },
       orAction: ( state ) => {
         let decimal = (parseInt(state[state.memoryInput.input1], 2) | parseInt(state[state.memoryInput.input2], 2));
@@ -72,7 +75,7 @@ export const memorySlice = createSlice({
   })
   
   export const { 
-    setValueMemory, setInput, 
+    setValueMemory, setInput,
     movAction, addAction, subAction, xchgAction, orAction, xorAction, andAction, notAction
   } = memorySlice.actions
   

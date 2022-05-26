@@ -71,6 +71,7 @@ function FormMemory() {
     //randomBin
     const handleClickRandom = () => {
       setValue(randomBin())
+      enqueueSnackbar('Random value was entered in the field.', { variant: "info" });
     }
 
     return (

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux'
+import { useSnackbar } from 'notistack';
 
 import { setValueMemory } from '../../app-redux/features/memorySlice'
 
@@ -15,6 +16,7 @@ import ItemMemory from '../atoms/ItemMemory'
 function ListMemory() {
 
     const dispatch = useDispatch();
+    const { enqueueSnackbar } = useSnackbar();
     
     const handleClick = () => {
         dispatch(setValueMemory({ title: "AL", value: randomBin() }))
@@ -26,6 +28,8 @@ function ListMemory() {
         dispatch(setValueMemory({ title: "BH", value: randomBin() }))
         dispatch(setValueMemory({ title: "CH", value: randomBin() }))
         dispatch(setValueMemory({ title: "DH", value: randomBin() }))
+
+        enqueueSnackbar('Random values entered to memory list.', { variant: "success" });
     }
 
     return (
