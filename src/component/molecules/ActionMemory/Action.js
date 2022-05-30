@@ -19,23 +19,22 @@ function Action() {
     const funAction = (name) => {
       switch(name){
         case "MOV":
-          dispatch(movAction())
-
           if(input1 === "" || input2 === ""){
             enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
           }else if(input1 !== input2){
+            dispatch(movAction())
             enqueueSnackbar('Action MOV was invoked.', { variant: "success" });
           }else{
+            dispatch(movAction())
             enqueueSnackbar('Action MOV was invoked but you chose the same memories.', { variant: "warning" });
           }
           
         break;
         case "ADD":
-          dispatch(addAction())
-
           if(input1 === "" || input2 === ""){
             enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
           }else if(input1 !== input2){
+            dispatch(addAction())
             enqueueSnackbar('Action ADD was invoked.', { variant: "success" });
           }
         break;
