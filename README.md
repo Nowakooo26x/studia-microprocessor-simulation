@@ -1,7 +1,16 @@
-Projekt symulacji pracy mikroprocesora
+Kamil Nowakowski
+Index: 14150
+
+Projekt na zajęcia:
+Architektura systemów komputerowych
+
+Strona z projektem:
 https://nowakooo26x.github.io/studia-microprocessor-simulation/
 
-npm install @mui/material @emotion/react @emotion/styled
+Repozytorium GitHub projektu:
+https://github.com/Nowakooo26x/studia-microprocessor-simulation
 
-https://bradfrost.com/blog/post/atomic-web-design/
-
+Opis:
+Aplikacja internetowa mająca na celu przedstawić imitacje pracy 8-bitowego mikroprocesora. 
+Projekt został wykonany w języku JavaScript, dodatkowo wspomagałem się technologiami: ReactJS, Redux, Material-UI, Notistack.
+Aplikacja została wysłana na mojego GitHuba, oraz jest na nim hostowana przez GitHub Pages.
