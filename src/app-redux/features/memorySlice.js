@@ -38,7 +38,6 @@ export const memorySlice = createSlice({
       setInput: (state, action) => {
         state.memoryInput[action.payload.name] = action.payload.value
       },
-      //Action
       movAction: ( state ) => {
         state[state.memoryInput.input2] = state[state.memoryInput.input1] 
         state[state.memoryInput.input1] = "00000000"

@@ -68,7 +68,7 @@ function FormMemory() {
         enqueueSnackbar('Input is empty. Enter a bin value (max 8 bits).', { variant: "error" });
       }
     }
-    //randomBin
+    
     const handleClickRandom = () => {
       setValue(randomBin())
       enqueueSnackbar('Random value was entered in the field.', { variant: "info" });

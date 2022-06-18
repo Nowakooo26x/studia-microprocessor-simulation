@@ -21,40 +21,82 @@ function Action() {
         case "MOV":
           if(input1 === "" || input2 === ""){
             enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
-          }else if(input1 !== input2){
-            dispatch(movAction())
-            enqueueSnackbar('Action MOV was invoked.', { variant: "success" });
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
           }else{
             dispatch(movAction())
-            enqueueSnackbar('Action MOV was invoked but you chose the same memories.', { variant: "warning" });
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
           }
-          
         break;
         case "ADD":
           if(input1 === "" || input2 === ""){
             enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
-          }else if(input1 !== input2){
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
+          }else{
             dispatch(addAction())
-            enqueueSnackbar('Action ADD was invoked.', { variant: "success" });
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
           }
         break;
         case "OR":
-          dispatch(orAction())
+          if(input1 === "" || input2 === ""){
+            enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
+          }else{
+            dispatch(orAction())
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
+          }
         break;
         case "AND":
-          dispatch(andAction())
+          if(input1 === "" || input2 === ""){
+            enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
+          }else{
+            dispatch(andAction())
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
+          }
         break;
         case "XCHG":
-          dispatch(xchgAction())
+          if(input1 === "" || input2 === ""){
+            enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
+          }else{
+            dispatch(xchgAction())
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
+          }
         break;
         case "SUB":
-          dispatch(subAction())
+          if(input1 === "" || input2 === ""){
+            enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
+          }else{
+            dispatch(subAction())
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
+          }
         break;
         case "XOR":
-          dispatch(xorAction())
+          if(input1 === "" || input2 === ""){
+            enqueueSnackbar(`You didn't choose the memorie.`, { variant: "error" });
+          }else if(input1 === input2){
+            enqueueSnackbar('The same memory cannot be selected twice.', { variant: "error" });
+          }else{
+            dispatch(xorAction())
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
+          }
         break;
         case "NOT":
-          dispatch(notAction())
+          if(input1 === ""){
+            enqueueSnackbar(`You didn't choose the memories.`, { variant: "error" });
+          }else if(input2 === ""){
+            enqueueSnackbar('The second memory is not empty.', { variant: "error" });
+          }else{
+            dispatch(notAction())
+            enqueueSnackbar(`Action ${name} was invoked.`, { variant: "success" });
+          }
         break;
       }
     }

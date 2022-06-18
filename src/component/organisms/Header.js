@@ -6,8 +6,8 @@ function Header() {
   return (
     <>
         <AppBar position="static">
-            <Typography variant="h5" component="h1">
-                Program
+            <Typography variant="h5" component="h1" m={1}>
+            SIMULATION MICROPROCESSOR - Kamil Nowakowski INDEX: 14150
             </Typography>
         </AppBar>
         <Box mb={5}/>
